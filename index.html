@@ -13,11 +13,12 @@
 	<link rel="stylesheet" href="/styles.css">
 </head>
 
+
 <body>
 	<div class="container">
 		<p>
-			<p style="font-weight:bold;">Last updated</p>19/01/2024
-		</p>
+    <p id="currentDateDisplay" style="font-weight:bold;"></p>
+  </p>
 		
 	</div>
 	<br>
@@ -44,5 +45,16 @@
 		</div>
 	</div>
 </body>
+ <script>
+        function getCurrentDate() {
+            let today = new Date();
+            let month = String(today.getMonth() + 1).padStart(2, '0');
+            let day = String(today.getDate()).padStart(2, '0');
+            let year = today.getFullYear();
+            return month + '/' + day + '/' + year;
+        }
 
+        let currentDate = getCurrentDate();
+  	document.getElementById('currentDateDisplay').textContent = `Last updated ${currentDate}`;
+    </script>
 </html>
